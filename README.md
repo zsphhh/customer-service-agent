@@ -12,3 +12,25 @@
 4. 运行演示：`python src/main.py`
 
 ## 项目结构
+customer-service-agent/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── src/
+│   ├── __init__.py
+│   ├── main.py                  # 入口与流程编排
+│   ├── agents/
+│   │   ├── __init__.py
+│   │   ├── intent_agent.py      # 意图识别
+│   │   ├── faq_agent.py         # 知识库问答
+│   │   ├── ticket_agent.py      # 工单分类与协同
+│   │   └── satisfaction_agent.py# 满意度跟进与知识库更新
+│   ├── knowledge/
+│   │   ├── __init__.py
+│   │   ├── base_faq.py          # 初始FAQ数据
+│   │   └── vector_store.py      # Chroma 向量存储封装
+│   └── utils/
+│       ├── __init__.py
+│       └── state.py             # 状态类型定义
+└── tests/
+    └── test_flow.py             # 基本流程测试
